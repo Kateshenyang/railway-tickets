@@ -1,0 +1,247 @@
+/* Контейнеры для полей ввода дат */
+.calendar__from,
+.calendar__to {
+  position: relative;
+  width: 50%;
+}
+
+/* Треугольник-указатель для календаря */
+.cal__triangle {
+  height: 11px;
+  width: 11px;
+  background-color: white;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 4px;
+  left: 140px;
+}
+
+/* Основной контейнер календаря */
+.cal__main {
+  height: 97%;
+  margin-top: 10px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-color: #FFFFFF;
+  border-radius: 4px;
+}
+
+/* Секция с месяцем и навигацией */
+.cal__month {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  border-bottom: 1px solid #C4C4C4;
+}
+
+/* Кнопки навигации по месяцам */
+.cal__month > button {
+  cursor: pointer;
+  margin-top: 26px;
+  width: 90px;
+  height: 10px;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+/* Стили для кнопок предыдущего и следующего месяца */
+.prev__month,
+.next__month {
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #FFFFFF;
+}
+
+.prev__month {
+  background-image: url(../../assets/images/left.png);
+}
+
+.next__month {
+  background-image: url(../../assets/images/right.png);
+}
+
+/* Текст с названием месяца */
+.cal__month-text {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: capitalize;
+  color: #2D2B2F;
+  align-self: center;
+}
+
+/* Таблица календаря */
+.cal__table {
+  border-collapse: collapse;
+  font-weight: 400;
+  width: 100%;
+  height: 79%;
+  text-align: center;
+}
+
+/* Ячейки таблицы календаря */
+.cal__table > tbody > tr > td {
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #FFA800;
+    color: white;
+  }
+}
+
+/* Заголовок таблицы календаря */
+.cal__table > thead {
+  height: 30px;
+}
+
+/* Стили для разных состояний дат */
+.date__month {
+  color: #000000;
+  cursor: pointer;
+}
+
+.date__other-month {
+  color: #00000030;
+  cursor: not-allowed;
+}
+
+.date__today {
+  box-sizing: border-box;
+  color: #000000;
+  background-color: #FFA8004F;
+  border: 2px solid #FFA800;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.date__week-end {
+  background-color: #00000012;
+}
+
+/* Контейнеры для календарей в фильтре */
+.filter__calendar-from,
+.filter__calendar-to {
+  position: absolute;
+  z-index: 1;
+  width: 303px;
+  height: 295px;
+}
+
+/* Скрытые элементы */
+.none {
+  display: none;
+}
+
+/* Основные стили для air-datepicker */
+.air-datepicker {
+  --adp-background-color: #FFFFFF;
+  --adp-accent-color: #FFA800;
+  --adp-cell-background-color-selected: #FFA800;
+  --adp-cell-background-color-selected-hover: #FFA800;
+  --adp-cell-background-color-in-range: #FFA8004F;
+  --adp-cell-background-color-in-range-hover: #FFA80080;
+  --adp-cell-border-radius: 5px;
+  --adp-border-color: #C4C4C4;
+  --adp-border-color-inner: #C4C4C4;
+  --adp-font-family: inherit;
+  --adp-font-size: 16px;
+  --adp-width: 100%;
+  --adp-z-index: 100;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Навигация календаря */
+.air-datepicker-nav {
+  border-bottom: 1px solid #C4C4C4;
+  padding: 10px;
+}
+
+/* Заголовок навигации */
+.air-datepicker-nav--title {
+  font-size: 24px;
+  font-weight: 400;
+  color: #2D2B2F;
+}
+
+/* Кнопки навигации */
+.air-datepicker-nav--action {
+  width: 32px;
+  height: 32px;
+  color: #2D2B2F;
+
+  &:hover {
+    background: #FFA800;
+    border-radius: 50%;
+  }
+}
+
+/* Названия дней недели */
+.air-datepicker-body--day-name {
+  color: #928F94;
+}
+
+/* Ячейки календаря */
+.air-datepicker-cell {
+  font-size: 16px;
+  font-weight: 400;
+  color: #292929;
+}
+
+/* Текущая дата */
+.air-datepicker-cell.-current- {
+  color: #292929;
+  background: #FFA8004F;
+  border: 2px solid #FFA800;
+}
+
+/* Выбранная дата */
+.air-datepicker-cell.-selected- {
+  color: #FFFFFF;
+  background: #FFA800;
+}
+
+/* Выбранная текущая дата */
+.air-datepicker-cell.-selected-.-current- {
+  color: #FFFFFF;
+  background: #FFA800;
+}
+
+/* Даты в выбранном диапазоне */
+.air-datepicker-cell.-in-range- {
+  background: #FFA8004F;
+}
+
+/* Текущая дата в выбранном диапазоне */
+.air-datepicker-cell.-in-range-.-current- {
+  background: #FFA8004F;
+}
+
+/* Неактивные даты */
+.air-datepicker-cell.-disabled- {
+  color: #00000030;
+  cursor: not-allowed;
+}
+
+/* Выходные дни */
+.air-datepicker-cell.-weekend- {
+  color: #928F94;
+}
+
+/* Выбранные выходные */
+.air-datepicker-cell.-weekend-.-selected- {
+  color: #FFFFFF;
+}
+
+/* Выходные в выбранном диапазоне */
+.air-datepicker-cell.-weekend-.-in-range- {
+  color: #292929;
+}
+
+/* Неактивные выходные */
+.air-datepicker-cell.-weekend-.-disabled- {
+  color: #00000030;
+}
