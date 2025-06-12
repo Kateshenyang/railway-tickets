@@ -73,13 +73,13 @@ export const Reviews = () => {
     if (!carouselRef.current) return;
 
     const clickedDot = event.target;
-    let dotIndex = 0;
+    // let dotIndex = 0;
 
     // Находим индекс кликнутой точки
     Array.from(carouselRef.current.children).forEach((item, index) => {
       item.classList.remove('active__dot');
       if (clickedDot.classList.contains(`dot__${index}`)) {
-        dotIndex = index;
+        // dotIndex = index;
         setTranslate(CAROUSEL_OFFSET * (index + 1));
       }
     });
